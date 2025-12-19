@@ -11,6 +11,8 @@
         .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
         .level-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
         .logo-circle { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid #38bdf8; background: #1e293b; }
+        /* Offset za navigaciju - da naslov ne pobjegne pod menu */
+        section { scroll-margin-top: 80px; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
@@ -19,64 +21,73 @@
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <div class="w-10 h-10 bg-sky-500 rounded-lg flex items-center justify-center text-white font-bold text-xl">B3</div>
-                <span class="text-2xl font-extrabold">BLOK<span class="text-sky-500">3</span></span>
+                <span class="text-2xl font-extrabold tracking-tight text-slate-800">BLOK<span class="text-sky-500">3</span></span>
             </div>
-            <div class="hidden md:flex gap-8 text-slate-600 font-medium">
-                <a href="#predavaci" class="hover:text-sky-500">Predavači</a>
-                <a href="#program" class="hover:text-sky-500">Program</a>
+            <div class="hidden md:flex gap-8 text-slate-600 font-bold uppercase text-sm tracking-widest">
+                <a href="#program" class="hover:text-sky-500 transition">Program</a>
+                <a href="#predavaci" class="hover:text-sky-500 transition">Predavači</a>
                 <a href="mailto:kontakt@blok3.hr" class="bg-sky-500 text-white px-5 py-2 rounded-full hover:bg-sky-600 transition">Kontakt</a>
             </div>
         </div>
     </nav>
 
-    <header class="gradient-bg text-white py-16 px-4 text-center">
-        <h1 class="text-4xl md:text-6xl font-black mb-4">BLOK3 Akademija</h1>
-        <p class="text-xl text-slate-300 max-w-2xl mx-auto">Strateška edukacija o digitalnoj imovini za pojedince i tvrtke.</p>
+    <header class="gradient-bg text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">Akademija za<br><span class="text-sky-400">digitalnu ekonomiju</span></h1>
+            <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-10">Strateška edukacija o blockchainu, MiCA regulativi i digitalnoj imovini.</p>
+            <a href="#program" class="bg-sky-500 hover:bg-sky-600 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl transition">Pogledaj Program</a>
+        </div>
     </header>
 
-    <section id="program" class="py-20 bg-slate-100">
+    <section id="program" class="py-24 bg-slate-100">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black mb-4">Program Edukacije</h2>
-                <p class="text-slate-600">Strukturirani put od osnova do profesionalnog upravljanja digitalnom imovinom.</p>
+                <div class="w-20 h-1.5 bg-sky-500 mx-auto rounded-full"></div>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden level-card border-t-8 border-emerald-400">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden level-card border-t-8 border-emerald-400">
                     <div class="p-8">
-                        <span class="text-emerald-500 font-bold uppercase tracking-widest text-sm">Razina 1</span>
-                        <h3 class="text-2xl font-black mt-2 mb-6">Crypto Start</h3>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-md font-bold text-xs uppercase">Razina 1</span>
+                            <i class="fas fa-seedling text-emerald-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6 italic text-slate-800">Osnove & Sigurnost</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> <span>Povijest novca i nastanak Bitcoina</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> <span>Kako sigurno kupiti prve kriptovalute</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> <span>Osnove novčanika (Walleti)</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-emerald-500 mt-1"></i> <span>Sigurnosni protokoli i higijena</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> <span class="text-slate-600">Arhitektura Bitcoina i Ethereuma</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> <span class="text-slate-600">Sigurna pohrana imovine (Custody)</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-emerald-500 mt-1"></i> <span class="text-slate-600">Analiza mjenjačnica i servisa</span></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden level-card border-t-8 border-sky-500">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden level-card border-t-8 border-sky-500">
                     <div class="p-8">
-                        <span class="text-sky-500 font-bold uppercase tracking-widest text-sm">Razina 2</span>
-                        <h3 class="text-2xl font-black mt-2 mb-6">Investor Pro</h3>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="bg-sky-100 text-sky-700 px-3 py-1 rounded-md font-bold text-xs uppercase">Razina 2</span>
+                            <i class="fas fa-chart-line text-sky-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6 italic text-slate-800">Tržišta & Analiza</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-sky-500 mt-1"></i> <span>Tehnička i fundamentalna analiza</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-sky-500 mt-1"></i> <span>DeFi i Smart Contract platforme</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-sky-500 mt-1"></i> <span>Upravljanje portfeljem i rizikom</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-sky-500 mt-1"></i> <span>Psihologija tržišta i ciklusi</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-sky-500 mt-1"></i> <span class="text-slate-600">DeFi i bankarstvo nove generacije</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-sky-500 mt-1"></i> <span class="text-slate-600">Fundamentalna analiza projekata</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-sky-500 mt-1"></i> <span class="text-slate-600">Upravljanje rizikom portfelja</span></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-3xl shadow-lg overflow-hidden level-card border-t-8 border-indigo-600">
+                <div class="bg-white rounded-3xl shadow-xl overflow-hidden level-card border-t-8 border-indigo-600">
                     <div class="p-8">
-                        <span class="text-indigo-600 font-bold uppercase tracking-widest text-sm">Razina 3</span>
-                        <h3 class="text-2xl font-black mt-2 mb-6">Master Class</h3>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-md font-bold text-xs uppercase">Razina 3</span>
+                            <i class="fas fa-building text-indigo-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-black mb-6 italic text-slate-800">B2B & Regulativa</h3>
                         <ul class="space-y-4">
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-indigo-600 mt-1"></i> <span>Institucionalno ulaganje i MiCA</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-indigo-600 mt-1"></i> <span>Porezni tretman digitalne imovine</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-indigo-600 mt-1"></i> <span>Napredne on-chain metrike</span></li>
-                            <li class="flex items-start gap-3"><i class="fas fa-check-circle text-indigo-600 mt-1"></i> <span>B2B integracija i custody rješenja</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-indigo-600 mt-1"></i> <span class="text-slate-600">Implementacija MiCA uredbe</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-indigo-600 mt-1"></i> <span class="text-slate-600">Porezna optimizacija i prijava</span></li>
+                            <li class="flex items-start gap-3"><i class="fas fa-check text-indigo-600 mt-1"></i> <span class="text-slate-600">Institucionalni Crypto Custody</span></li>
                         </ul>
                     </div>
                 </div>
@@ -84,30 +95,34 @@
         </div>
     </section>
 
-    <section id="predavaci" class="py-20 max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-black mb-12">Vaši Predavači</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="p-6">
-                <img src="logo1.png" class="logo-circle mx-auto mb-4" onerror="this.src='https://via.placeholder.com/120'">
-                <h4 class="text-xl font-bold">Moj Kripto</h4>
-                <a href="https://www.youtube.com/@mojkripto" target="_blank" class="text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+    <section id="predavaci" class="py-24 max-w-7xl mx-auto px-4 text-center">
+        <h2 class="text-4xl font-black mb-16">Vaši Predavači</h2>
+        <div class="grid md:grid-cols-3 gap-12">
+            <div class="group">
+                <img src="logo1.png" class="logo-circle mx-auto mb-6 group-hover:scale-110 transition duration-300 shadow-xl" onerror="this.src='https://via.placeholder.com/120?text=Moj+Kripto'">
+                <h4 class="text-2xl font-bold mb-4">Moj Kripto</h4>
+                <div class="flex justify-center gap-6">
+                    <a href="https://www.youtube.com/@mojkripto" target="_blank" class="text-red-500 text-3xl hover:opacity-75 transition"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/in/hrvoje-v-5b430819/" target="_blank" class="text-blue-700 text-3xl hover:opacity-75 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
-            <div class="p-6">
-                <img src="logo2.png" class="logo-circle mx-auto mb-4" onerror="this.src='https://via.placeholder.com/120'">
-                <h4 class="text-xl font-bold">Cryptoverse</h4>
-                <a href="https://www.youtube.com/@CryptoverseHR" target="_blank" class="text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            <div class="group">
+                <img src="logo2.png" class="logo-circle mx-auto mb-6 group-hover:scale-110 transition duration-300 shadow-xl" onerror="this.src='https://via.placeholder.com/120?text=Cryptoverse'">
+                <h4 class="text-2xl font-bold mb-4">Cryptoverse</h4>
+                <div class="flex justify-center gap-6">
+                    <a href="https://www.youtube.com/@CryptoverseHR" target="_blank" class="text-red-500 text-3xl hover:opacity-75 transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-700 text-3xl hover:opacity-75 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
-            <div class="p-6">
-                <img src="logo3.png" class="logo-circle mx-auto mb-4" onerror="this.src='https://via.placeholder.com/120'">
-                <h4 class="text-xl font-bold">Kripto Evolucija</h4>
-                <a href="https://www.youtube.com/@KriptoEvolucija" target="_blank" class="text-red-500 text-2xl"><i class="fab fa-youtube"></i></a>
+            <div class="group">
+                <img src="logo3.png" class="logo-circle mx-auto mb-6 group-hover:scale-110 transition duration-300 shadow-xl" onerror="this.src='https://via.placeholder.com/120?text=Kripto+Evolucija'">
+                <h4 class="text-2xl font-bold mb-4">Kripto Evolucija</h4>
+                <div class="flex justify-center gap-6">
+                    <a href="https://www.youtube.com/@KriptoEvolucija" target="_blank" class="text-red-500 text-3xl hover:opacity-75 transition"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-700 text-3xl hover:opacity-75 transition"><i class="fab fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-white py-8 text-center">
-        <p>© 2025 BLOK3 Akademija</p>
-    </footer>
-
-</body>
-</html>
+    <footer class="bg-slate-900 text-white py-12 text-center border-
