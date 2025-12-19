@@ -3,200 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blok3 | Vodeća regionalna kripto akademija</title>
+    <title>BLOK3 - Akademija Digitalne Ekonomije</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
+        .accent-border { border-top: 4px solid #38bdf8; }
+        .logo-circle { 
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            object-fit: cover;
+            border: 4px solid #38bdf8;
+            background: #1e293b;
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans">
+<body class="bg-slate-50 font-sans">
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center">
-                    <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                        BLOK3
-                    </span>
-                </div>
-                <div class="hidden md:flex space-x-8 font-medium text-slate-600 text-sm">
-                    <a href="#program" class="hover:text-blue-600 transition">Program</a>
-                    <a href="#b2b" class="hover:text-blue-600 transition">Za tvrtke</a>
-                    <a href="#tim" class="hover:text-blue-600 transition">O nama</a>
-                    <a href="#kontakt" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Prijavi se</a>
-                </div>
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-sky-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg">B3</div>
+                <span class="text-2xl font-extrabold text-slate-800 tracking-tight">BLOK<span class="text-sky-500">3</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-slate-600 font-medium">
+                <a href="#program" class="hover:text-sky-500 transition">Program</a>
+                <a href="#predavaci" class="hover:text-sky-500 transition">Predavači</a>
+                <a href="#kontakt" class="bg-sky-500 text-white px-5 py-2 rounded-full hover:bg-sky-600 transition">Prijavi se</a>
             </div>
         </div>
     </nav>
 
-    <header class="relative py-20 overflow-hidden bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-                Vaš vodič kroz novu <br><span class="text-blue-400">digitalnu ekonomiju.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-                Strukturirana edukacija o blockchainu i kriptovalutama od strane vodećih stručnjaka u regiji. Od nule do naprednih DeFi strategija.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#program" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold text-lg transition shadow-lg shadow-blue-900/20">
-                    Istraži programe
-                </a>
-                <a href="#b2b" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 rounded-xl font-bold text-lg transition">
-                    Edukacija za tvrtke
-                </a>
+    <header class="gradient-bg text-white py-20 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            <div class="inline-block p-3 bg-sky-500/20 rounded-2xl mb-6">
+                <i class="fas fa-cubes text-4xl text-sky-400"></i>
             </div>
-        </div>
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
-            <div class="absolute top-10 left-10 w-72 h-72 bg-blue-500 rounded-full blur-[120px]"></div>
-            <div class="absolute bottom-10 right-10 w-72 h-72 bg-indigo-500 rounded-full blur-[120px]"></div>
+            <h1 class="text-5xl md:text-6xl font-black mb-6 leading-tight">Savladajte digitalnu ekonomiju uz BLOK3</h1>
+            <p class="text-xl text-slate-300 mb-10">Prva specijalizirana edukacija za kriptovalute, blockchain i Web3 u regiji. Od osnova do institucionalnog ulaganja.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#program" class="bg-sky-500 hover:bg-sky-600 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl transition">Istraži program</a>
+                <a href="#kontakt" class="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold text-lg backdrop-blur-sm transition border border-white/20">B2B Upiti</a>
+            </div>
         </div>
     </header>
 
-    <section class="py-12 border-b border-slate-200 bg-white">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">Ekspertiza s kanala:</p>
-            <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60">
-                <span class="text-xl font-bold flex items-center gap-2"><i class="fab fa-youtube text-red-600 text-2xl"></i> Moj Kripto</span>
-                <span class="text-xl font-bold flex items-center gap-2"><i class="fab fa-youtube text-red-600 text-2xl"></i> Kripto Evolucija</span>
-                <span class="text-xl font-bold flex items-center gap-2"><i class="fab fa-youtube text-red-600 text-2xl"></i> Cryptoverse</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="program" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="predavaci" class="py-20 max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">Modularna edukacija</h2>
-            <p class="text-slate-500">Prilagođeno vašem nivou znanja i ciljevima.</p>
+            <h2 class="text-4xl font-black text-slate-800 mb-4">Tko su vaši predavači?</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto text-lg">Tri vodeća regionalna kanala udružila su snage kako bi vam prenijeli praktično iskustvo s tržišta.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-blue-300 transition shadow-sm hover:shadow-xl group">
-                <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition">
-                    <i class="fas fa-book-open"></i>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="bg-white p-8 rounded-3xl shadow-xl text-center accent-border transition hover:scale-105">
+                <img src="logo1.png" alt="Moj Kripto" class="logo-circle mx-auto mb-6 shadow-lg" onerror="this.src='https://via.placeholder.com/150?text=Moj+Kripto'">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Moj Kripto</h3>
+                <p class="text-sky-600 font-semibold mb-4">Analiza tržišta i strategije</p>
+                <div class="flex justify-center gap-4 mb-6">
+                    <a href="#" class="text-red-500 text-2xl hover:opacity-80"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-700 text-2xl hover:opacity-80"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">1. Kripto Pismenost</h3>
-                <p class="text-slate-600 mb-6 text-sm">Osnove tehnologije, povijest Bitcoina i najvažnija pravila sigurnosti za miran san.</p>
-                <ul class="space-y-3 mb-8 text-sm">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Razumijevanje Blockchaina</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Sigurnosni protokoli</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Prva sigurna transakcija</li>
-                </ul>
-                <button class="w-full py-3 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition">Saznaj više</button>
+                <button class="w-full py-3 border-2 border-slate-100 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition">Pogledaj kanal</button>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border-2 border-blue-600 relative shadow-xl">
-                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Najpopularnije</div>
-                <div class="w-12 h-12 bg-blue-600 text-white rounded-lg flex items-center justify-center mb-6">
-                    <i class="fas fa-chart-line"></i>
+            <div class="bg-white p-8 rounded-3xl shadow-xl text-center accent-border transition hover:scale-105">
+                <img src="logo2.png" alt="Cryptoverse" class="logo-circle mx-auto mb-6 shadow-lg" onerror="this.src='https://via.placeholder.com/150?text=Cryptoverse'">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Cryptoverse</h3>
+                <p class="text-sky-600 font-semibold mb-4">Tehnologija i Web3 ekosustav</p>
+                <div class="flex justify-center gap-4 mb-6">
+                    <a href="#" class="text-red-500 text-2xl hover:opacity-80"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-700 text-2xl hover:opacity-80"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">2. Kripto Investitor</h3>
-                <p class="text-slate-600 mb-6 text-sm">Samostalno upravljanje novčanicima, osnove tehničke analize i porezna usklađenost.</p>
-                <ul class="space-y-3 mb-8 text-sm text-slate-600">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Korištenje Cold Walleta</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Čitanje japanskih svijeća</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-blue-600"></i> Porezna FIFO evidencija</li>
-                </ul>
-                <button class="w-full py-3 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition">Prijavi se odmah</button>
+                <button class="w-full py-3 border-2 border-slate-100 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition">Pogledaj kanal</button>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-blue-300 transition shadow-sm hover:shadow-xl group">
-                <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
-                    <i class="fas fa-bolt"></i>
+            <div class="bg-white p-8 rounded-3xl shadow-xl text-center accent-border transition hover:scale-105">
+                <img src="logo3.png" alt="Kripto Evolucija" class="logo-circle mx-auto mb-6 shadow-lg" onerror="this.src='https://via.placeholder.com/150?text=Evolucija'">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">Kripto Evolucija</h3>
+                <p class="text-sky-600 font-semibold mb-4">Makroekonomija i regulativa</p>
+                <div class="flex justify-center gap-4 mb-6">
+                    <a href="#" class="text-red-500 text-2xl hover:opacity-80"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="text-blue-700 text-2xl hover:opacity-80"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <h3 class="text-xl font-bold mb-3 text-slate-900">3. Web3 Ekspert</h3>
-                <p class="text-slate-600 mb-6 text-sm">Duboki zaron u DeFi, on-chain analizu i napredne strategije upravljanja rizikom.</p>
-                <ul class="space-y-3 mb-8 text-sm">
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500"></i> DeFi posuđivanje i staking</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500"></i> On-chain forenzika</li>
-                    <li class="flex items-center gap-2"><i class="fas fa-check text-indigo-500"></i> Tokenizacija imovine (RWA)</li>
-                </ul>
-                <button class="w-full py-3 bg-slate-100 text-slate-900 font-bold rounded-xl hover:bg-slate-200 transition">Istraži module</button>
+                <button class="w-full py-3 border-2 border-slate-100 rounded-xl font-bold text-slate-600 hover:bg-slate-50 transition">Pogledaj kanal</button>
             </div>
         </div>
     </section>
 
-    <section id="b2b" class="bg-slate-900 text-white py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-8 leading-tight">Vaši zaposlenici spremni za <span class="text-blue-400">digitalnu budućnost.</span></h2>
-                    <p class="text-slate-400 text-lg mb-10">
-                        Nudimo custom in-vivo radionice i online licence za banke, financijske institucije i tvrtke koje žele razumjeti MiCA regulativu i blockchain operacije.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="text-blue-400 text-2xl"><i class="fas fa-users"></i></div>
-                            <div>
-                                <h4 class="font-bold">Prilagođeni kurikulum</h4>
-                                <p class="text-slate-400 text-sm">Fokus na teme koje su ključne za vaše poslovanje (Custody, Compliance, DeFi).</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4">
-                            <div class="text-blue-400 text-2xl"><i class="fas fa-chalkboard-teacher"></i></div>
-                            <div>
-                                <h4 class="font-bold">Radionice uživo</h4>
-                                <p class="text-slate-400 text-sm">Interaktivna predavanja na vašoj lokaciji s našom trojicom stručnjaka.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
-                    <h3 class="text-2xl font-bold mb-6">Zatražite ponudu za tvrtku</h3>
-                    <form class="space-y-4">
-                        <input type="text" placeholder="Ime tvrtke" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:outline-none focus:border-blue-500">
-                        <input type="email" placeholder="E-mail" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl focus:outline-none focus:border-blue-500">
-                        <textarea placeholder="Koja područja vas zanimaju?" class="w-full bg-slate-900 border border-slate-700 p-4 rounded-xl h-32 focus:outline-none focus:border-blue-500"></textarea>
-                        <button class="w-full py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition uppercase tracking-wider">Pošalji upit</button>
-                    </form>
-                </div>
+    <footer class="bg-slate-900 text-white py-12 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-sky-500 rounded flex items-center justify-center font-bold">B3</div>
+                <span class="text-xl font-bold">BLOK3</span>
             </div>
-        </div>
-    </section>
-
-    <section id="tim" class="py-24 max-w-7xl mx-auto px-4">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold mb-4">Tko su vaši predavači?</h2>
-            <p class="text-slate-500">Tri glasa regije s više od 9 godina iskustva u Web3 svijetu.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-12">
-            <div class="text-center">
-                <div class="w-48 h-48 bg-slate-200 rounded-full mx-auto mb-6 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/200')"></div>
-                <h4 class="text-xl font-bold">Moj Kripto</h4>
-                <p class="text-blue-600 text-sm font-medium mb-2">Tržišna analiza & Ciklusi</p>
-                <div class="flex justify-center gap-4 text-slate-400">
-                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="text-center">
-                <div class="w-48 h-48 bg-slate-200 rounded-full mx-auto mb-6 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/200')"></div>
-                <h4 class="text-xl font-bold">Kripto Evolucija</h4>
-                <p class="text-blue-600 text-sm font-medium mb-2">Ecosystem & Altcoini</p>
-                <div class="flex justify-center gap-4 text-slate-400">
-                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="text-center">
-                <div class="w-48 h-48 bg-slate-200 rounded-full mx-auto mb-6 bg-cover bg-center shadow-lg" style="background-image: url('https://via.placeholder.com/200')"></div>
-                <h4 class="text-xl font-bold">Cryptoverse</h4>
-                <p class="text-blue-600 text-sm font-medium mb-2">Tehnikalije & DeFi</p>
-                <div class="flex justify-center gap-4 text-slate-400">
-                    <a href="#" class="hover:text-red-600"><i class="fab fa-youtube"></i></a>
-                    <a href="#" class="hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white border-t border-slate-200 py-12">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-bold text-slate-900">BLOK3</div>
-            <div class="flex gap-8 text-slate-500 text-sm">
-                <a href="#">Uvjeti korištenja</a>
-                <a href="#">Privatnost</a>
-                <a href="#">Kontakt</a>
-            </div>
-            <div class="text-slate-400 text-sm">
-                &copy; 2024 Blok3. Sva prava pridržana.
+            <p class="text-slate-400">© 2025 BLOK3 Akademija. Sva prava pridržana.</p>
+            <div class="flex gap-6">
+                <a href="mailto:kontakt@blok3.hr" class="hover:text-sky-400 transition">Kontakt</a>
+                <a href="#" class="hover:text-sky-400 transition">Uvjeti korištenja</a>
             </div>
         </div>
     </footer>
