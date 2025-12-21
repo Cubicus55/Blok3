@@ -12,8 +12,9 @@
         .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
         .hero-gradient { background: radial-gradient(circle at top right, #1e40af, transparent), radial-gradient(circle at bottom left, #0f172a, #020617); }
         .text-gradient { background: linear-gradient(to right, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .logo-ring { width: 130px; height: 130px; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, #38bdf8, #818cf8); cursor: zoom-in; transition: transform 0.3s ease; }
-        .logo-ring:hover { transform: scale(1.05); }
+        .bento-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .bento-card:hover { transform: translateY(-8px); border-color: #38bdf8; box-shadow: 0 0 30px rgba(56, 189, 248, 0.15); }
+        .logo-ring { width: 130px; height: 130px; border-radius: 50%; padding: 4px; background: linear-gradient(45deg, #38bdf8, #818cf8); cursor: zoom-in; }
         .logo-inner { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background: #0f172a; border: 4px solid #020617; }
         .input-field { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 12px; width: 100%; color: white; transition: 0.3s; }
         .input-field:focus { border-color: #38bdf8; outline: none; background: rgba(255,255,255,0.1); }
@@ -23,7 +24,7 @@
 <body>
 
     <div id="lightbox" class="modal-overlay" onclick="this.style.display='none'">
-        <img id="lightbox-img" src="" alt="Povećano" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl">
+        <img id="lightbox-img" src="" class="max-w-full max-h-[80vh] rounded-2xl shadow-2xl">
     </div>
 
     <div id="legalModal" class="modal-overlay">
@@ -40,83 +41,80 @@
                 <span class="text-xl font-extrabold tracking-tighter uppercase">Blok<span class="text-sky-400">3</span></span>
             </div>
             <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
-                <a href="#o-programu" class="hover:text-white transition">O programu</a>
+                <a href="#kurikulum" class="hover:text-white transition">Program</a>
                 <a href="#predavaci" class="hover:text-white transition">Predavači</a>
-                <a href="#upis" class="hover:text-white transition text-sky-400">Upis</a>
+                <a href="#upis" class="text-sky-400 font-black">Upis 2025</a>
             </div>
-            <a href="#upis" class="bg-sky-500 hover:bg-sky-400 text-white px-5 py-2 rounded-xl text-sm font-bold transition shadow-lg shadow-sky-500/20">Prijavi se</a>
+            <a href="#upis" class="bg-sky-500 hover:bg-sky-400 text-white px-5 py-2 rounded-xl text-sm font-bold transition">Kupi Tečaj</a>
         </div>
     </nav>
 
     <header class="min-h-screen hero-gradient flex items-center px-6 pt-20">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
             <div>
-                <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 text-sky-400 px-4 py-2 rounded-full text-[10px] font-bold mb-6 tracking-widest uppercase">
-                    Generacija 2025/2026
-                </div>
-                <h1 class="text-6xl md:text-8xl font-black mb-6 leading-[0.85] tracking-tighter text-white">
-                    Budućnost <br> <span class="text-gradient">ekonomije</span> je ovdje.
+                <h1 class="text-6xl md:text-8xl font-black mb-6 leading-[0.85] tracking-tighter text-white uppercase italic">
+                    Nova era <br> <span class="text-gradient">učenja.</span>
                 </h1>
-                <p class="text-xl text-slate-400 mb-10 max-w-lg leading-relaxed">
-                    Pridruži se vodećoj regionalnoj akademiji za blockchain i digitalnu imovinu. Od regulative do naprednog trgovanja.
-                </p>
+                <p class="text-xl text-slate-400 mb-10 max-w-lg">Pridruži se Blok3 akademiji. Sveobuhvatna edukacija o digitalnoj ekonomiji pod vodstvom najboljih stručnjaka.</p>
                 <div class="flex gap-4">
-                    <a href="#upis" class="bg-white text-black px-8 py-4 rounded-2xl font-black hover:bg-sky-400 hover:text-white transition duration-300">Započni edukaciju</a>
-                    <a href="#predavaci" class="px-8 py-4 rounded-2xl font-bold border border-white/10 hover:bg-white/5 transition">Upoznaj tim</a>
+                    <a href="#upis" class="bg-white text-black px-8 py-4 rounded-2xl font-black hover:bg-sky-400 transition">Kreni odmah</a>
                 </div>
-            </div>
-            <div class="hidden lg:block relative">
-                <div class="glass p-12 rounded-[3rem] border-white/5 shadow-2xl relative z-10">
-                    <div class="flex gap-2 mb-6">
-                        <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
-                        <div class="w-3 h-3 rounded-full bg-orange-500/50"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
-                    </div>
-                    <code class="text-sky-400 block mb-2 font-mono text-sm">> Initializing Block3_Core...</code>
-                    <code class="text-slate-500 block mb-2 font-mono text-sm">> Loading MiCA_Regulation_2025...</code>
-                    <code class="text-emerald-400 block font-mono text-sm">> Success. Ready for mass adoption.</code>
-                </div>
-                <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-sky-600/20 blur-[100px] rounded-full"></div>
             </div>
         </div>
     </header>
 
-    <section id="predavaci" class="py-32 px-6 bg-slate-950/50">
+    <section id="kurikulum" class="py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black mb-20 italic uppercase tracking-tighter text-center">Vodeći stručnjaci regije</h2>
+            <h2 class="text-4xl font-black mb-16 uppercase italic">Program Akademije</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 glass p-10 rounded-[2.5rem] bento-card">
+                    <i class="fas fa-seedling text-3xl text-sky-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Osnove & Blockchain</h3>
+                    <p class="text-slate-400">Povijest novca, tehnologija iza Bitcoina i osnove digitalnog vlasništva.</p>
+                </div>
+                <div class="glass p-10 rounded-[2.5rem] bento-card bg-sky-500/5">
+                    <i class="fas fa-balance-scale text-3xl text-indigo-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">MiCA & Zakoni</h3>
+                    <p class="text-slate-400">Sve o novoj EU regulativi i pravnom okviru.</p>
+                </div>
+                <div class="glass p-10 rounded-[2.5rem] bento-card">
+                    <i class="fas fa-chart-line text-3xl text-emerald-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Trading</h3>
+                    <p class="text-slate-400">Analiza tržišta, upravljanje rizikom i strategije.</p>
+                </div>
+                <div class="md:col-span-2 glass p-10 rounded-[2.5rem] bento-card">
+                    <i class="fas fa-shield-virus text-3xl text-purple-400 mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Sigurnost & Custody</h3>
+                    <p class="text-slate-400">Kako sigurno pohraniti imovinu na institucionalnoj razini.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="predavaci" class="py-32 px-6 bg-slate-950/50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black mb-20 italic uppercase">Predavači</h2>
             <div class="grid md:grid-cols-3 gap-16">
-                <div class="flex flex-col items-center group text-center">
-                    <div class="logo-ring mb-8" onclick="showImg('logo1.png')">
-                        <img src="logo1.png" alt="Vedran Mijatović" class="logo-inner" onerror="this.src='https://via.placeholder.com/150?text=VM'">
+                <div class="flex flex-col items-center">
+                    <div class="logo-ring mb-6" onclick="showImg('logo1.png')">
+                        <img src="logo1.png" class="logo-inner" onerror="this.src='https://via.placeholder.com/150'">
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Vedran Mijatović</h4>
-                    <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Moj Kripto</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.youtube.com/@mojkripto" target="_blank" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/vedran-mijatovic/" target="_blank" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
+                    <h4 class="text-xl font-bold">Vedran Mijatović</h4>
+                    <p class="text-slate-500 text-sm uppercase">Moj Kripto</p>
                 </div>
-                <div class="flex flex-col items-center group text-center">
-                    <div class="logo-ring mb-8" onclick="showImg('logo2.png')">
-                        <img src="logo2.png" alt="Veljko Skenderija" class="logo-inner" onerror="this.src='https://via.placeholder.com/150?text=VS'">
+                <div class="flex flex-col items-center">
+                    <div class="logo-ring mb-6" onclick="showImg('logo2.png')">
+                        <img src="logo2.png" class="logo-inner" onerror="this.src='https://via.placeholder.com/150'">
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Veljko Skenderija</h4>
-                    <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Cryptoverse</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.youtube.com/@cryptoverse2022" target="_blank" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/veljko-skenderija-23b058137/" target="_blank" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
+                    <h4 class="text-xl font-bold">Veljko Skenderija</h4>
+                    <p class="text-slate-500 text-sm uppercase">Cryptoverse</p>
                 </div>
-                <div class="flex flex-col items-center group text-center">
-                    <div class="logo-ring mb-8" onclick="showImg('logo3.png')">
-                        <img src="logo3.png" alt="Dean Valentine Rogulja" class="logo-inner" onerror="this.src='https://via.placeholder.com/150?text=DVR'">
+                <div class="flex flex-col items-center">
+                    <div class="logo-ring mb-6" onclick="showImg('logo3.png')">
+                        <img src="logo3.png" class="logo-inner" onerror="this.src='https://via.placeholder.com/150'">
                     </div>
-                    <h4 class="text-2xl font-bold mb-2">Dean Valentine Rogulja</h4>
-                    <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Kripto Evolucija</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.youtube.com/@KriptoEvolucija" target="_blank" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="https://www.linkedin.com/in/dean-valentine-rogulja-560a122a3/" target="_blank" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
+                    <h4 class="text-xl font-bold">Dean Valentine Rogulja</h4>
+                    <p class="text-slate-500 text-sm uppercase">Kripto Evolucija</p>
                 </div>
             </div>
         </div>
@@ -124,46 +122,30 @@
 
     <section id="upis" class="py-32 px-6">
         <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black mb-4 uppercase tracking-tighter italic text-gradient">Osiguraj svoje mjesto</h2>
-                <p class="text-slate-400">Ispunite podatke za generiranje fiskalnog računa i pristup platformi.</p>
-            </div>
-            
             <div class="grid lg:grid-cols-5 gap-12">
-                <div class="lg:col-span-3 space-y-8">
-                    <div class="glass p-8 rounded-3xl border-white/5">
-                        <h3 class="font-bold mb-6 flex items-center gap-3"><i class="fas fa-user-circle text-sky-400"></i> Podaci za račun (Pero model)</h3>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
+                <div class="lg:col-span-3 space-y-6">
+                    <h2 class="text-3xl font-black uppercase italic">Prijavi se za 2025.</h2>
+                    <div class="glass p-8 rounded-3xl space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
                             <input type="text" placeholder="Ime" class="input-field">
                             <input type="text" placeholder="Prezime" class="input-field">
                         </div>
-                        <input type="email" placeholder="E-mail za dostavu računa i linka" class="input-field mb-4">
-                        <input type="text" placeholder="Adresa i kućni broj" class="input-field mb-4">
-                        <div class="grid grid-cols-2 gap-4 mb-6">
+                        <input type="email" placeholder="E-mail adresa" class="input-field">
+                        <input type="text" placeholder="Adresa za račun" class="input-field">
+                        <div class="grid grid-cols-2 gap-4">
                             <input type="text" placeholder="Poštanski broj" class="input-field">
                             <input type="text" placeholder="Grad" class="input-field">
                         </div>
-                        <label class="flex items-center gap-3 cursor-pointer group">
-                            <input type="checkbox" class="w-5 h-5 rounded border-white/10 bg-white/5 checked:bg-sky-500">
-                            <span class="text-sm text-slate-400 group-hover:text-white transition italic">Trebam R1 račun za tvrtku</span>
+                        <label class="flex items-center gap-3 text-sm text-slate-500 italic cursor-pointer">
+                            <input type="checkbox" class="w-4 h-4 rounded"> Trebam R1 račun za tvrtku
                         </label>
                     </div>
                 </div>
-
                 <div class="lg:col-span-2">
-                    <div class="glass p-8 rounded-3xl border-sky-500/20 bg-sky-500/5 sticky top-24">
-                        <h3 class="font-bold mb-6">Sažetak prijave</h3>
-                        <div class="space-y-4 text-sm mb-8">
-                            <div class="flex justify-between"><span>Akademija 2025/26</span><span class="font-bold">890,00 EUR</span></div>
-                            <div class="flex justify-between text-slate-500"><span>Porez (Mali poduzetnik)</span><span>0,00 EUR</span></div>
-                            <div class="pt-4 border-t border-white/10 flex justify-between text-xl font-black text-white">
-                                <span>UKUPNO</span><span>890,00 EUR</span>
-                            </div>
-                        </div>
-                        <button class="w-full bg-sky-500 hover:bg-sky-400 text-white font-black py-4 rounded-xl shadow-lg shadow-sky-500/20 transition mb-4 uppercase tracking-widest">Plati i kreni</button>
-                        <div class="flex justify-center gap-4 text-slate-500 text-xs">
-                            <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-bitcoin"></i>
-                        </div>
+                    <div class="glass p-8 rounded-3xl border-sky-500/20 bg-sky-500/5">
+                        <h3 class="font-bold mb-4 uppercase">Ukupno za uplatu</h3>
+                        <div class="text-4xl font-black mb-6">890,00 EUR</div>
+                        <button class="w-full bg-sky-500 hover:bg-sky-400 py-4 rounded-xl font-black uppercase transition shadow-lg shadow-sky-500/20">Plati Karticom / Kriptom</button>
                     </div>
                 </div>
             </div>
@@ -172,54 +154,36 @@
 
     <footer class="py-20 px-6 border-t border-white/5 bg-slate-950">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
                 <div class="lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-6 h-6 bg-sky-500 rounded font-bold flex items-center justify-center text-[10px]">B3</div>
-                        <span class="font-bold tracking-widest uppercase">Block3 j.d.o.o.</span>
-                    </div>
+                    <span class="font-bold text-white block mb-4 uppercase">Block3 j.d.o.o.</span>
                     <div class="text-[11px] text-slate-500 space-y-1 uppercase tracking-tighter">
-                        <p>Sjedište: Digitalna Ulica 21, 10000 Zagreb, Hrvatska</p>
-                        <p>OIB: 01234567890 | MBS: 081234567 | Trgovački sud u Zagrebu</p>
-                        <p>Temeljni kapital: 3,00 EUR (uplaćen u cijelosti)</p>
-                        <p class="pt-2 text-slate-400 font-bold italic">Svi računi su fiskalizirani prema Zakonu o fiskalizaciji (B2B e-Račun od 2026).</p>
+                        <p>Digitalna Ulica 21, 10000 Zagreb | OIB: 01234567890</p>
+                        <p>Firma u osnivanju | Svi računi su fiskalizirani (e-Račun 2026 Ready)</p>
                     </div>
                 </div>
                 <div>
-                    <h5 class="font-bold mb-6 text-xs uppercase tracking-widest text-white">Pravni centar</h5>
-                    <div class="flex flex-col gap-3 text-sm text-slate-500">
-                        <button onclick="showLegal('terms')" class="text-left hover:text-sky-400 transition">Uvjeti poslovanja</button>
-                        <button onclick="showLegal('privacy')" class="text-left hover:text-sky-400 transition">GDPR & Kolačići</button>
-                        <button onclick="showLegal('nfa')" class="text-left hover:text-sky-400 transition italic font-bold">NFA Disclaimer</button>
+                    <h5 class="font-bold mb-4 text-xs uppercase text-white">Legal</h5>
+                    <div class="flex flex-col gap-2 text-sm text-slate-500">
+                        <button onclick="showLegal('terms')" class="text-left hover:text-white transition">Uvjeti</button>
+                        <button onclick="showLegal('nfa')" class="text-left hover:text-sky-400 font-bold transition italic">NFA Disclaimer</button>
                     </div>
                 </div>
-                <div>
-                    <h5 class="font-bold mb-6 text-xs uppercase tracking-widest text-white">Kontakt</h5>
-                    <a href="mailto:kontakt@blok3.hr" class="text-sm text-slate-500 hover:text-white">kontakt@blok3.hr</a>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-white/5 text-center text-[10px] text-slate-700 uppercase tracking-[0.2em]">
-                &copy; 2025 BLOK3 Digitalna Akademija. Sva prava pridržana.
             </div>
         </div>
     </footer>
 
     <script>
-        function showImg(s){ 
-            document.getElementById('lightbox-img').src=s; 
-            document.getElementById('lightbox').style.display='flex'; 
-        }
+        function showImg(s){ document.getElementById('lightbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
         function showLegal(t){
             const c = document.getElementById('legalContent');
             const data = {
-                terms: '<h2 class="text-2xl font-black uppercase text-white">Uvjeti poslovanja</h2><p>Edukacija se provodi online. Block3 j.d.o.o. obvezuje se isporučiti materijale u dogovorenom roku. Povrat novca moguć je sukladno zakonu u roku od 14 dana.</p>',
-                privacy: '<h2 class="text-2xl font-black uppercase text-white">GDPR & Privatnost</h2><p>Vaši podaci se koriste isključivo za potrebe fiskalizacije računa i pristupa akademiji. Koristimo nužne kolačiće za funkcionalnost naplate.</p>',
-                nfa: '<h2 class="text-2xl font-black uppercase text-sky-400 italic">Financial Disclaimer (NFA)</h2><p class="font-bold">Sadržaj na ovoj stranici i unutar akademije nije financijski savjet.</p><p>Kriptovalute nose visoki rizik gubitka kapitala. Block3 j.d.o.o. i predavači ne preuzimaju odgovornost za vaše investicijske odluke.</p>'
+                terms: '<h2 class="text-2xl font-black text-white">Uvjeti</h2><p>Standardni uvjeti poslovanja Block3 akademije...</p>',
+                nfa: '<h2 class="text-2xl font-black text-sky-400 italic italic uppercase">NFA Disclaimer</h2><p>Sadržaj nije financijski savjet. Kripto je rizičan.</p>'
             };
             c.innerHTML = data[t];
             document.getElementById('legalModal').style.display='flex';
         }
-        window.onclick = function(e){ if(e.target.className.includes('modal-overlay')) e.target.style.display='none'; }
     </script>
 </body>
 </html>
