@@ -20,6 +20,12 @@
         .input-field:focus { border-color: #38bdf8; outline: none; background: rgba(255,255,255,0.1); }
         .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .terminal-bg { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.05); }
+        
+        /* Custom table styling */
+        .tier-header { background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), transparent); border-left: 4px solid #38bdf8; }
+        th { text-align: left; padding: 12px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; }
+        td { padding: 16px 12px; border-top: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
+        .practical-tag { background: rgba(16, 185, 129, 0.1); color: #10b981; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; display: inline-block; margin-bottom: 4px; }
     </style>
 </head>
 <body>
@@ -86,27 +92,196 @@
 
     <section id="kurikulum" class="py-32 px-6 bg-slate-950/30">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black mb-16 uppercase italic tracking-tighter">Program Akademije</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="md:col-span-2 glass p-10 rounded-[2.5rem] bento-card">
-                    <i class="fas fa-seedling text-3xl text-sky-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Osnove & Blockchain</h3>
-                    <p class="text-slate-400">Povijest novca, tehnologija iza Bitcoina i osnove digitalnog vlasništva.</p>
+            <div class="mb-16">
+                <h2 class="text-4xl font-black uppercase italic tracking-tighter">Program Akademije</h2>
+                <p class="text-slate-400 mt-2">Strateški strukturirani moduli s naglaskom na praktičnu primjenu.</p>
+            </div>
+
+            <div class="space-y-12">
+                <div class="glass rounded-[2.5rem] overflow-hidden border-white/5">
+                    <div class="p-8 tier-header flex justify-between items-center">
+                        <div>
+                            <span class="text-sky-400 font-black text-xs uppercase tracking-widest">Razina 1</span>
+                            <h3 class="text-2xl font-bold">Temelji, Sigurnost i Zakon</h3>
+                        </div>
+                        <span class="text-slate-500 font-mono text-sm">5 Modula | ~2h 5min</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4">Modul</th>
+                                    <th class="w-1/3">Ishodi učenja</th>
+                                    <th class="w-1/12 text-center">Min</th>
+                                    <th class="w-1/3">Praktični rad</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr>
+                                    <td class="font-bold">M1.1: Ethos i Povijest</td>
+                                    <td class="text-slate-400">Bitcoin Standard, Satoshi kandidati i razlozi nastanka.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td class="text-xs italic text-slate-300">Analiza Whitepapera i cenzure.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M1.2: Blockchain i Stablecoini</td>
+                                    <td class="text-slate-400">BTC, ETH, 3. generacija. Uvod u USDT, USDC i DAI.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">CEX On-ramp: Registracija i prva SEPA uplata.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M1.3: Sigurnost (Self-custody)</td>
+                                    <td class="text-slate-400">CEX vs Wallet. Koncept Seed riječi i privatnih ključeva.</td>
+                                    <td class="text-center text-slate-500">30</td>
+                                    <td><span class="practical-tag">RADIONICA</span><br><span class="text-xs text-slate-300 italic">Generiranje i sigurno zapisivanje Seed fraze.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M1.4: Zakon i Porez (RH)</td>
+                                    <td class="text-slate-400">Pravilo 2 godine, MiCA regulativa, lokalni zakoni.</td>
+                                    <td class="text-center text-slate-500">20</td>
+                                    <td class="text-xs italic text-slate-300">Tablica evidencije za porezno oslobođenje.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M1.5: Osnove Trgovanja</td>
+                                    <td class="text-slate-400">Svijeće, timeframe, chartovi i osnovni indikatori.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td class="text-xs italic text-slate-300">Navigacija kroz dugoročne modele cijene.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="glass p-10 rounded-[2.5rem] bento-card bg-sky-500/5">
-                    <i class="fas fa-balance-scale text-3xl text-indigo-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">MiCA & Zakoni</h3>
-                    <p class="text-slate-400">Sve o novoj EU regulativi i pravnom okviru od 2025.</p>
+
+                <div class="glass rounded-[2.5rem] overflow-hidden border-white/5">
+                    <div class="p-8 tier-header flex justify-between items-center" style="border-left-color: #818cf8;">
+                        <div>
+                            <span class="text-indigo-400 font-black text-xs uppercase tracking-widest">Razina 2</span>
+                            <h3 class="text-2xl font-bold">Aktivno sudjelovanje i Analitika</h3>
+                        </div>
+                        <span class="text-slate-500 font-mono text-sm">7 Modula | ~3h</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4">Modul</th>
+                                    <th class="w-1/3">Ishodi učenja</th>
+                                    <th class="w-1/12 text-center">Min</th>
+                                    <th class="w-1/3">Praktični rad</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr>
+                                    <td class="font-bold">M2.1: Ethereum i L2</td>
+                                    <td class="text-slate-400">PoS mehanizam, Layer 2 rješenja i Smart Contracts.</td>
+                                    <td class="text-center text-slate-500">30</td>
+                                    <td><span class="practical-tag">MASTERCLASS</span><br><span class="text-xs text-slate-300 italic">MetaMask: Instalacija, mreže i više računa.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.2: Tokenomika i Rudarenje</td>
+                                    <td class="text-slate-400">Rudarenje, halving, supply i vesting projekata.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td class="text-xs italic text-slate-300">TokenUnlocks i Block Explorer vježbe.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.3: Napredna TA i Ciklusi</td>
+                                    <td class="text-slate-400">S2F, Rainbow chart, Wyckoff i Fear & Greed.</td>
+                                    <td class="text-center text-slate-500">35</td>
+                                    <td class="text-xs italic text-slate-300">TradingView: Crtanje Support/Resistance zona.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.4: Novčanik Pro</td>
+                                    <td class="text-slate-400">Sigurno slanje i primanje. Hot vs Cold wallets.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">Uvoz accounta putem Private Key-a u MetaMask.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.5: NFT i Web3 Kultura</td>
+                                    <td class="text-slate-400">NFT, meme tokeni, metaverse i pump.fun.</td>
+                                    <td class="text-center text-slate-500">20</td>
+                                    <td class="text-xs italic text-slate-300">Analiza Magic Eden i OpenSea sučelja.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.6: RWA i DeFi osnove</td>
+                                    <td class="text-slate-400">Real World Assets (RealT), DePin i uvod u Aave.</td>
+                                    <td class="text-center text-slate-500">20</td>
+                                    <td class="text-xs italic text-slate-300">Demo RWA i DeFi lending sučelja.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M2.7: Terminologija</td>
+                                    <td class="text-slate-400">Najbitniji pojmovi i sleng iz Vedranovog rječnika.</td>
+                                    <td class="text-center text-slate-500">15</td>
+                                    <td class="text-xs italic text-slate-300">Video vodič kroz ključne termine.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="glass p-10 rounded-[2.5rem] bento-card">
-                    <i class="fas fa-chart-line text-3xl text-emerald-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Trading & Analiza</h3>
-                    <p class="text-slate-400">Analiza tržišta, upravljanje rizikom i strategije trgovanja.</p>
-                </div>
-                <div class="md:col-span-2 glass p-10 rounded-[2.5rem] bento-card">
-                    <i class="fas fa-shield-virus text-3xl text-purple-400 mb-6"></i>
-                    <h3 class="text-2xl font-bold mb-4">Sigurnost & Custody</h3>
-                    <p class="text-slate-400">Kako sigurno pohraniti imovinu na institucionalnoj razini i izbjeći prevare.</p>
+
+                <div class="glass rounded-[2.5rem] overflow-hidden border-white/5">
+                    <div class="p-8 tier-header flex justify-between items-center" style="border-left-color: #10b981;">
+                        <div>
+                            <span class="text-emerald-400 font-black text-xs uppercase tracking-widest">Razina 3</span>
+                            <h3 class="text-2xl font-bold">Napredni Web3 i Exit Strategija</h3>
+                        </div>
+                        <span class="text-slate-500 font-mono text-sm">7 Modula | ~3h 5min</span>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr>
+                                    <th class="w-1/4">Modul</th>
+                                    <th class="w-1/3">Ishodi učenja</th>
+                                    <th class="w-1/12 text-center">Min</th>
+                                    <th class="w-1/3">Praktični rad</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr>
+                                    <td class="font-bold">M3.1: DeFi Deep Dive</td>
+                                    <td class="text-slate-400">Lending, Farming, Staking i Impermanent Loss.</td>
+                                    <td class="text-center text-slate-500">35</td>
+                                    <td><span class="practical-tag">RADIONICA</span><br><span class="text-xs text-slate-300 italic">Otvaranje LP pozicije i uzimanje zajma.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.2: Bridging i Cross-chain</td>
+                                    <td class="text-slate-400">Slanje imovine između različitih blockchaina.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">Bridge sredstava s Mainneta na L2.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.3: AI i Blockchain</td>
+                                    <td class="text-slate-400">Analiza projekata na sjecištu AI tehnologije.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td class="text-xs italic text-slate-300">Korištenje AI botova za sentiment.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.4: Forenzika i Scamovi</td>
+                                    <td class="text-slate-400">Prepoznavanje phishinga, honeypota i scamova.</td>
+                                    <td class="text-center text-slate-500">30</td>
+                                    <td class="text-xs italic text-slate-300">Korištenje Bubblemaps i TokenSniffera.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.5: Globalna Arena</td>
+                                    <td class="text-slate-400">Howey test, Commodity vs Security, ETF-ovi.</td>
+                                    <td class="text-center text-slate-500">25</td>
+                                    <td class="text-xs italic text-slate-300">Analiza regulatornog utjecaja na cijenu.</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.6: Exit Strategija</td>
+                                    <td class="text-slate-400">Kako i kada izaći iz marketa. DCA-out plan.</td>
+                                    <td class="text-center text-slate-500">30</td>
+                                    <td><span class="practical-tag">FINALE</span><br><span class="text-xs text-slate-300 italic">Izrada osobnog Take Profit plana.</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">M3.7: Budućnost</td>
+                                    <td class="text-slate-400">Quantum resistance, x402 i novi trendovi.</td>
+                                    <td class="text-center text-slate-500">15</td>
+                                    <td class="text-xs italic text-slate-300">Završni pregled budućih usecaseova.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,4 +406,3 @@
     </script>
 </body>
 </html>
-
