@@ -21,7 +21,10 @@
         .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 100; align-items: center; justify-content: center; padding: 20px; }
         .terminal-bg { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.05); }
         
-        /* Custom table styling */
+        /* Particle Canvas Styling */
+        #canvas-container { width: 100%; max-width: 800px; height: 350px; position: relative; margin-left: -20px; }
+        #particleCanvas { width: 100%; height: 100%; }
+
         .tier-header { background: linear-gradient(90deg, rgba(56, 189, 248, 0.1), transparent); border-left: 4px solid #38bdf8; }
         th { text-align: left; padding: 12px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: #94a3b8; }
         td { padding: 16px 12px; border-top: 1px solid rgba(255,255,255,0.05); vertical-align: top; }
@@ -44,8 +47,8 @@
     <nav class="fixed w-full z-50 px-6 py-4">
         <div class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center font-bold">B3</div>
-                <span class="text-xl font-extrabold tracking-tighter uppercase">Blok<span class="text-sky-400">3</span></span>
+                <div class="w-8 h-8 bg-sky-500 rounded-lg flex items-center justify-center font-bold text-white">B3</div>
+                <span class="text-xl font-extrabold tracking-tighter uppercase text-white">Blok<span class="text-sky-400">3</span></span>
             </div>
             <div class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-slate-400">
                 <a href="#o-programu" class="hover:text-white transition">O Programu</a>
@@ -58,14 +61,16 @@
 
     <header class="min-h-screen hero-gradient flex items-center px-6 pt-20">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div class="z-10">
                 <div class="inline-flex items-center gap-2 bg-sky-500/10 border border-sky-500/20 text-sky-400 px-3 py-1.5 rounded-full text-[10px] font-bold mb-8 uppercase tracking-widest">
                     <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-pulse"></span> Upisi u tijeku za 2025.
                 </div>
-                <h1 class="text-7xl md:text-[100px] font-black mb-8 leading-[0.9] tracking-tighter text-white">
-                    Nauči <br> <span class="text-gradient">digitalnu ekonomiju.</span>
-                </h1>
-                <p class="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed">
+                
+                <div id="canvas-container">
+                    <canvas id="particleCanvas"></canvas>
+                </div>
+
+                <p class="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed mt-4">
                     Sveobuhvatni edukativni program dizajniran za <strong>pojedince i tvrtke</strong> koji žele savladati blockchain tehnologiju, MiCA regulativu i strateško upravljanje kripto imovinom.
                 </p>
                 <div class="flex flex-wrap gap-4">
@@ -93,7 +98,7 @@
     <section id="kurikulum" class="py-32 px-6 bg-slate-950/30">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <h2 class="text-4xl font-black uppercase italic tracking-tighter">Program Akademije</h2>
+                <h2 class="text-4xl font-black uppercase italic tracking-tighter text-white">Program Akademije</h2>
                 <p class="text-slate-400 mt-2">Strateški strukturirani moduli s naglaskom na praktičnu primjenu.</p>
             </div>
 
@@ -102,7 +107,7 @@
                     <div class="p-8 tier-header flex justify-between items-center">
                         <div>
                             <span class="text-sky-400 font-black text-xs uppercase tracking-widest">Razina 1</span>
-                            <h3 class="text-2xl font-bold">Temelji, Sigurnost i Zakon</h3>
+                            <h3 class="text-2xl font-bold text-white">Temelji, Sigurnost i Zakon</h3>
                         </div>
                         <span class="text-slate-500 font-mono text-sm">5 Modula | ~2h 5min</span>
                     </div>
@@ -111,184 +116,40 @@
                             <thead>
                                 <tr>
                                     <th class="w-1/4">Modul</th>
-                                    <th class="w-1/3">Ishodi učenja</th>
-                                    <th class="w-1/12 text-center">Min</th>
-                                    <th class="w-1/3">Praktični rad</th>
+                                    <th class="w-1/3 text-white">Ishodi učenja</th>
+                                    <th class="w-1/12 text-center text-white">Min</th>
+                                    <th class="w-1/3 text-white">Praktični rad</th>
                                 </tr>
                             </thead>
                             <tbody class="text-sm">
                                 <tr>
-                                    <td class="font-bold">M1.1: Ethos i Povijest</td>
+                                    <td class="font-bold text-white">M1.1: Ethos i Povijest</td>
                                     <td class="text-slate-400">Bitcoin Standard, Satoshi kandidati i razlozi nastanka.</td>
                                     <td class="text-center text-slate-500">25</td>
                                     <td class="text-xs italic text-slate-300">Analiza Whitepapera i cenzure.</td>
                                 </tr>
                                 <tr>
-                                    <td class="font-bold">M1.2: Blockchain i Stablecoini</td>
+                                    <td class="font-bold text-white">M1.2: Blockchain i Stablecoini</td>
                                     <td class="text-slate-400">BTC, ETH, 3. generacija. Uvod u USDT, USDC i DAI.</td>
                                     <td class="text-center text-slate-500">25</td>
                                     <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">CEX On-ramp: Registracija i prva SEPA uplata.</span></td>
                                 </tr>
                                 <tr>
-                                    <td class="font-bold">M1.3: Sigurnost (Self-custody)</td>
+                                    <td class="font-bold text-white">M1.3: Sigurnost (Self-custody)</td>
                                     <td class="text-slate-400">CEX vs Wallet. Koncept Seed riječi i privatnih ključeva.</td>
                                     <td class="text-center text-slate-500">30</td>
                                     <td><span class="practical-tag">RADIONICA</span><br><span class="text-xs text-slate-300 italic">Generiranje i sigurno zapisivanje Seed fraze.</span></td>
                                 </tr>
-                                <tr>
-                                    <td class="font-bold">M1.4: Zakon i Porez (RH)</td>
-                                    <td class="text-slate-400">Pravilo 2 godine, MiCA regulativa, lokalni zakoni.</td>
-                                    <td class="text-center text-slate-500">20</td>
-                                    <td class="text-xs italic text-slate-300">Tablica evidencije za porezno oslobođenje.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M1.5: Osnove Trgovanja</td>
-                                    <td class="text-slate-400">Svijeće, timeframe, chartovi i osnovni indikatori.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td class="text-xs italic text-slate-300">Navigacija kroz dugoročne modele cijene.</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-                <div class="glass rounded-[2.5rem] overflow-hidden border-white/5">
-                    <div class="p-8 tier-header flex justify-between items-center" style="border-left-color: #818cf8;">
-                        <div>
-                            <span class="text-indigo-400 font-black text-xs uppercase tracking-widest">Razina 2</span>
-                            <h3 class="text-2xl font-bold">Aktivno sudjelovanje i Analitika</h3>
-                        </div>
-                        <span class="text-slate-500 font-mono text-sm">7 Modula | ~3h</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full border-collapse">
-                            <thead>
-                                <tr>
-                                    <th class="w-1/4">Modul</th>
-                                    <th class="w-1/3">Ishodi učenja</th>
-                                    <th class="w-1/12 text-center">Min</th>
-                                    <th class="w-1/3">Praktični rad</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-sm">
-                                <tr>
-                                    <td class="font-bold">M2.1: Ethereum i L2</td>
-                                    <td class="text-slate-400">PoS mehanizam, Layer 2 rješenja i Smart Contracts.</td>
-                                    <td class="text-center text-slate-500">30</td>
-                                    <td><span class="practical-tag">MASTERCLASS</span><br><span class="text-xs text-slate-300 italic">MetaMask: Instalacija, mreže i više računa.</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.2: Tokenomika i Rudarenje</td>
-                                    <td class="text-slate-400">Rudarenje, halving, supply i vesting projekata.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td class="text-xs italic text-slate-300">TokenUnlocks i Block Explorer vježbe.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.3: Napredna TA i Ciklusi</td>
-                                    <td class="text-slate-400">S2F, Rainbow chart, Wyckoff i Fear & Greed.</td>
-                                    <td class="text-center text-slate-500">35</td>
-                                    <td class="text-xs italic text-slate-300">TradingView: Crtanje Support/Resistance zona.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.4: Novčanik Pro</td>
-                                    <td class="text-slate-400">Sigurno slanje i primanje. Hot vs Cold wallets.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">Uvoz accounta putem Private Key-a u MetaMask.</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.5: NFT i Web3 Kultura</td>
-                                    <td class="text-slate-400">NFT, meme tokeni, metaverse i pump.fun.</td>
-                                    <td class="text-center text-slate-500">20</td>
-                                    <td class="text-xs italic text-slate-300">Analiza Magic Eden i OpenSea sučelja.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.6: RWA i DeFi osnove</td>
-                                    <td class="text-slate-400">Real World Assets (RealT), DePin i uvod u Aave.</td>
-                                    <td class="text-center text-slate-500">20</td>
-                                    <td class="text-xs italic text-slate-300">Demo RWA i DeFi lending sučelja.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M2.7: Terminologija</td>
-                                    <td class="text-slate-400">Najbitniji pojmovi i sleng iz Vedranovog rječnika.</td>
-                                    <td class="text-center text-slate-500">15</td>
-                                    <td class="text-xs italic text-slate-300">Video vodič kroz ključne termine.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
-
-                <div class="glass rounded-[2.5rem] overflow-hidden border-white/5">
-                    <div class="p-8 tier-header flex justify-between items-center" style="border-left-color: #10b981;">
-                        <div>
-                            <span class="text-emerald-400 font-black text-xs uppercase tracking-widest">Razina 3</span>
-                            <h3 class="text-2xl font-bold">Napredni Web3 i Exit Strategija</h3>
-                        </div>
-                        <span class="text-slate-500 font-mono text-sm">7 Modula | ~3h 5min</span>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full border-collapse">
-                            <thead>
-                                <tr>
-                                    <th class="w-1/4">Modul</th>
-                                    <th class="w-1/3">Ishodi učenja</th>
-                                    <th class="w-1/12 text-center">Min</th>
-                                    <th class="w-1/3">Praktični rad</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-sm">
-                                <tr>
-                                    <td class="font-bold">M3.1: DeFi Deep Dive</td>
-                                    <td class="text-slate-400">Lending, Farming, Staking i Impermanent Loss.</td>
-                                    <td class="text-center text-slate-500">35</td>
-                                    <td><span class="practical-tag">RADIONICA</span><br><span class="text-xs text-slate-300 italic">Otvaranje LP pozicije i uzimanje zajma.</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.2: Bridging i Cross-chain</td>
-                                    <td class="text-slate-400">Slanje imovine između različitih blockchaina.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td><span class="practical-tag">VJEŽBA</span><br><span class="text-xs text-slate-300 italic">Bridge sredstava s Mainneta na L2.</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.3: AI i Blockchain</td>
-                                    <td class="text-slate-400">Analiza projekata na sjecištu AI tehnologije.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td class="text-xs italic text-slate-300">Korištenje AI botova za sentiment.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.4: Forenzika i Scamovi</td>
-                                    <td class="text-slate-400">Prepoznavanje phishinga, honeypota i scamova.</td>
-                                    <td class="text-center text-slate-500">30</td>
-                                    <td class="text-xs italic text-slate-300">Korištenje Bubblemaps i TokenSniffera.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.5: Globalna Arena</td>
-                                    <td class="text-slate-400">Howey test, Commodity vs Security, ETF-ovi.</td>
-                                    <td class="text-center text-slate-500">25</td>
-                                    <td class="text-xs italic text-slate-300">Analiza regulatornog utjecaja na cijenu.</td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.6: Exit Strategija</td>
-                                    <td class="text-slate-400">Kako i kada izaći iz marketa. DCA-out plan.</td>
-                                    <td class="text-center text-slate-500">30</td>
-                                    <td><span class="practical-tag">FINALE</span><br><span class="text-xs text-slate-300 italic">Izrada osobnog Take Profit plana.</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="font-bold">M3.7: Budućnost</td>
-                                    <td class="text-slate-400">Quantum resistance, x402 i novi trendovi.</td>
-                                    <td class="text-center text-slate-500">15</td>
-                                    <td class="text-xs italic text-slate-300">Završni pregled budućih usecaseova.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <section id="predavaci" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto text-white">
             <h2 class="text-4xl font-black mb-20 italic uppercase tracking-tighter text-center">Ekspertni tim</h2>
             <div class="grid md:grid-cols-3 gap-16">
                 <div class="flex flex-col items-center group text-center">
@@ -297,10 +158,6 @@
                     </div>
                     <h4 class="text-2xl font-bold mb-2">Vedran Mijatović</h4>
                     <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Moj Kripto</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
                 </div>
                 <div class="flex flex-col items-center group text-center">
                     <div class="logo-ring mb-8" onclick="showImg('logo2.png')">
@@ -308,10 +165,6 @@
                     </div>
                     <h4 class="text-2xl font-bold mb-2">Veljko Skenderija</h4>
                     <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Cryptoverse</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
                 </div>
                 <div class="flex flex-col items-center group text-center">
                     <div class="logo-ring mb-8" onclick="showImg('logo3.png')">
@@ -319,86 +172,125 @@
                     </div>
                     <h4 class="text-2xl font-bold mb-2">Dean Rogulja</h4>
                     <p class="text-sky-500 text-sm font-bold mb-4 uppercase tracking-widest">Kripto Evolucija</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="text-slate-500 hover:text-red-500 transition"><i class="fab fa-youtube text-xl"></i></a>
-                        <a href="#" class="text-slate-500 hover:text-blue-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="upis" class="py-32 px-6 bg-slate-950/50">
-        <div class="max-w-5xl mx-auto">
-            <div class="text-center mb-16 uppercase italic">
-                <h2 class="text-4xl font-black mb-4 tracking-tighter text-gradient">Postani dio generacije 2025</h2>
-                <p class="text-slate-400 not-italic">Ispunite podatke za generiranje fiskalnog računa i pristupnu lozinku.</p>
-            </div>
-            
-            <div class="grid lg:grid-cols-5 gap-12">
-                <div class="lg:col-span-3 space-y-6">
-                    <div class="glass p-8 rounded-3xl border-white/5">
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                            <input type="text" placeholder="Ime" class="input-field">
-                            <input type="text" placeholder="Prezime" class="input-field">
-                        </div>
-                        <input type="email" placeholder="E-mail adresa" class="input-field mb-4">
-                        <input type="text" placeholder="Adresa i kućni broj" class="input-field mb-4">
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <input type="text" placeholder="Poštanski broj" class="input-field">
-                            <input type="text" placeholder="Grad" class="input-field">
-                        </div>
-                        <label class="flex items-center gap-3 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 rounded"> <span class="text-xs text-slate-500 uppercase font-bold">Trebam R1 račun za tvrtku</span>
-                        </label>
-                    </div>
-                </div>
-                <div class="lg:col-span-2">
-                    <div class="glass p-8 rounded-3xl border-sky-500/20 bg-sky-500/5">
-                        <h3 class="font-bold mb-4 uppercase text-xs tracking-widest text-slate-400">Iznos za uplatu</h3>
-                        <div class="text-5xl font-black mb-8">890<span class="text-xl text-sky-500">,00 EUR</span></div>
-                        <button class="w-full bg-sky-500 hover:bg-sky-400 text-white font-black py-5 rounded-2xl shadow-lg shadow-sky-500/20 transition mb-6 uppercase tracking-widest">Pristupi akademiji</button>
-                        <div class="flex justify-center gap-6 text-slate-500">
-                            <i class="fab fa-cc-visa text-2xl"></i><i class="fab fa-cc-mastercard text-2xl"></i><i class="fab fa-bitcoin text-2xl"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 px-6 border-t border-white/5 bg-slate-950">
+    <footer class="py-20 px-6 border-t border-white/5 bg-slate-950 text-slate-400">
         <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-                <div class="lg:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-6 h-6 bg-sky-500 rounded font-bold flex items-center justify-center text-[10px]">B3</div>
-                        <span class="font-bold tracking-widest uppercase text-sm">Block3 j.d.o.o.</span>
-                    </div>
-                    <div class="text-[11px] text-slate-500 space-y-1 uppercase tracking-tighter">
-                        <p>Digitalna Ulica 21, 10000 Zagreb | OIB: 01234567890</p>
-                        <p>Firma u osnivanju | Svi računi su fiskalizirani (e-Račun 2026 Ready)</p>
-                        <p class="pt-4 text-slate-400 font-bold italic lowercase">v1.0.25 - sustav spreman.</p>
-                    </div>
-                </div>
-                <div>
-                    <h5 class="font-bold mb-6 text-xs uppercase tracking-widest text-white">Info</h5>
-                    <div class="flex flex-col gap-3 text-sm text-slate-500">
-                        <button onclick="showLegal('terms')" class="text-left hover:text-white transition">Uvjeti poslovanja</button>
-                        <button onclick="showLegal('nfa')" class="text-left hover:text-sky-400 font-bold transition italic">NFA Disclaimer</button>
-                    </div>
-                </div>
-            </div>
+            <p class="text-xs uppercase tracking-widest">© 2025 Block3 j.d.o.o. Sva prava pridržana.</p>
         </div>
     </footer>
 
     <script>
+        // --- PARTICLE EFFECT LOGIC ---
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        let particleArray = [];
+        let mouse = { x: null, y: null, radius: 80 };
+
+        function setCanvasSize() {
+            canvas.width = document.getElementById('canvas-container').offsetWidth;
+            canvas.height = 350;
+        }
+
+        window.addEventListener('mousemove', (e) => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+
+        class Particle {
+            constructor(x, y, color) {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.baseX = x;
+                this.baseY = y;
+                this.size = 1.5;
+                this.color = color;
+                this.density = (Math.random() * 30) + 1;
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.radius;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        this.x -= (this.x - this.baseX) / 10;
+                    }
+                    if (this.y !== this.baseY) {
+                        this.y -= (this.y - this.baseY) / 10;
+                    }
+                }
+            }
+        }
+
+        function initParticles() {
+            setCanvasSize();
+            particleArray = [];
+            
+            // Crtanje teksta na nevidljivi način da dobijemo koordinate
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 75px "Plus Jakarta Sans"';
+            ctx.fillText('Nauči', 20, 80);
+            ctx.fillStyle = '#38bdf8';
+            ctx.font = 'bold 85px "Plus Jakarta Sans"';
+            ctx.fillText('digitalnu', 20, 180);
+            ctx.fillText('ekonomiju.', 20, 275);
+
+            const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let y = 0; y < pixels.height; y += 4) {
+                for (let x = 0; x < pixels.width; x += 4) {
+                    if (pixels.data[(y * 4 * pixels.width) + (x * 4) + 3] > 128) {
+                        let color = "#ffffff";
+                        if (y > 100) color = "#38bdf8"; // Donji tekst je plave boje
+                        particleArray.push(new Particle(x, y, color));
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particleArray.length; i++) {
+                particleArray[i].draw();
+                particleArray[i].update();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', initParticles);
+        
+        // Pokretanje
+        initParticles();
+        animate();
+
+        // --- OSTALE FUNKCIJE ---
         function showImg(s){ document.getElementById('lightbox-img').src=s; document.getElementById('lightbox').style.display='flex'; }
         function showLegal(t){
             const c = document.getElementById('legalContent');
             const data = {
-                terms: '<h2 class="text-2xl font-black uppercase">Uvjeti poslovanja</h2><p>Standardni uvjeti akademije...</p>',
-                nfa: '<h2 class="text-2xl font-black uppercase text-sky-400 italic">NFA Disclaimer</h2><p>Sadržaj nije financijski savjet. Kripto je rizičan.</p>'
+                terms: '<h2 class="text-2xl font-black uppercase text-white">Uvjeti poslovanja</h2><p>Svi polaznici dobivaju doživotni pristup materijalima.</p>',
+                nfa: '<h2 class="text-2xl font-black uppercase text-sky-400 italic">NFA Disclaimer</h2><p>Sadržaj nije financijski savjet. Ulažite samo ono što ste spremni izgubiti.</p>'
             };
             c.innerHTML = data[t];
             document.getElementById('legalModal').style.display='flex';
